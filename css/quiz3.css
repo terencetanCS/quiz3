@@ -70,14 +70,20 @@ nav ul li ul {
     position: absolute;
     flex-direction: column;
     width: 100%;
+    top: 100%;
+    display: none;
 }
 
 nav ul li ul li a{
-
+    display: block;
+    text-align: center;
+    page-break-after: 1.2rem 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 nav ul li:hover ul{
-    
+    display:block;
 }
 
 /* Hover effects */
@@ -87,6 +93,7 @@ nav ul li a, nav ul li a:after, nav ul li a:before {
 }
 
 nav ul li a:hover {
+    
     color: var(--text-color);
 }
 
@@ -113,6 +120,10 @@ nav.menu ul li a:hover:after {
 
 /* New */
 
+.label, #toggle {
+    display: none;
+}
+
 /* media query */
 
 @media(max-width:700px) {
@@ -126,6 +137,7 @@ nav.menu ul li a:hover:after {
     nav ul {
         flex-direction: column;
         width: 100%;
+        position: absolute;
         background: rgba(0, 0, 0, 0.5);
         display: none !important;
     }
@@ -133,7 +145,12 @@ nav.menu ul li a:hover:after {
         display: block !important;
         cursor: pointer;
     }
-  
+
+    #toggle:checked+.nav{
+        display: block!important;
+    }
+    
+
     .nav a {
         display: block;
         margin: 0;
